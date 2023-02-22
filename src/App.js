@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios'
+import { Route, Routes, BrowserRouter, Link } from 'react-router-dom';
 
 
 function App() {
@@ -45,6 +46,15 @@ function App() {
 
   return (
     <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path='/about' element={<h1>About</h1>} />
+          <Route path='/user/:id' exact element={<h1>ID:</h1>} />
+        </Routes>
+        <Link to='/about'>About</Link><br />
+        <Link to='/'>Home</Link>
+
+      </BrowserRouter>
       <h1>App</h1>
       <input placeholder='Name' onChange={(e) => setName(e.target.value)} /><br />
       <input placeholder='Mobile' onChange={(e) => setMobile(e.target.value)} /><br />
