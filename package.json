@@ -13,7 +13,13 @@
     "sass": "^1.57.1",
     "web-vitals": "^2.1.4"
   },
-
+  "scripts": {
+    "start-client": "react-scripts start",
+    "start": "react-scripts start",
+    "build": "babel src -d lib",
+    "test": "jest",
+    "eject": "react-scripts eject"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
