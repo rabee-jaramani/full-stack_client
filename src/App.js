@@ -19,12 +19,12 @@ function App() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: name, mobile: mobile })
     };
-    fetch('http://localhost:5000/data', requestOptions)
+    fetch('https://full-stack-server-ea3y.onrender.com/data', requestOptions)
       .then(response => response.json())
       .then(data => console.log('DATA STORED', data));
   }
   const search_for_user = () => {
-    axios.get(`http://localhost:5000/user/` + id)
+    axios.get(`https://full-stack-server-ea3y.onrender.com/user/` + id)
       .then(response => {
         const user = response.data
         setUser(user)
@@ -32,7 +32,7 @@ function App() {
       })
   }
   const fetch_users = () => {
-    axios.get(`http://localhost:5000/all-users`)
+    axios.get(`https://full-stack-server-ea3y.onrender.com/all-users`)
       .then(response => {
         const users_DB = response.data
         setUsers(users_DB)
